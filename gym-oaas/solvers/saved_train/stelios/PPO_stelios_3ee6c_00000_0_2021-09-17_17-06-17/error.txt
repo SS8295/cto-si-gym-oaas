@@ -1,0 +1,27 @@
+Failure # 1 (occurred at 2021-09-17_17-06-21)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/trial_runner.py", line 739, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/ray_trial_executor.py", line 746, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/usr/local/lib/python3.7/dist-packages/ray/_private/client_mode_hook.py", line 82, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/worker.py", line 1623, in get
+    raise value
+ray.exceptions.RayActorError: The actor died because of an error raised in its creation task, [36mray::PPO.__init__()[39m (pid=19835, ip=172.17.0.2)
+  File "/usr/local/lib/python3.7/dist-packages/ray/rllib/agents/trainer_template.py", line 136, in __init__
+    Trainer.__init__(self, config, env, logger_creator)
+  File "/usr/local/lib/python3.7/dist-packages/ray/rllib/agents/trainer.py", line 592, in __init__
+    super().__init__(config, logger_creator)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/trainable.py", line 103, in __init__
+    self.setup(copy.deepcopy(self.config))
+  File "/usr/local/lib/python3.7/dist-packages/ray/rllib/agents/trainer_template.py", line 146, in setup
+    super().setup(config)
+  File "/usr/local/lib/python3.7/dist-packages/ray/rllib/agents/trainer.py", line 701, in setup
+    self._allow_unknown_configs)
+  File "/usr/local/lib/python3.7/dist-packages/ray/rllib/agents/trainer.py", line 1359, in merge_trainer_configs
+    cls._override_all_subkeys_if_type_changes)
+  File "/usr/local/lib/python3.7/dist-packages/ray/tune/utils/util.py", line 264, in deep_update
+    raise Exception("Unknown config parameter `{}` ".format(k))
+Exception: Unknown config parameter `mode`
+

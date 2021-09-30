@@ -1,0 +1,11 @@
+FROM CONTAINER
+
+run python file
+
+FROM LOCAL MACHINE
+
+docker cp <dockerID>:/root/ray_results/ .
+
+tensorboard --logdir <directory>  
+
+(directory is ./ray_results/stelios/PPO.../)

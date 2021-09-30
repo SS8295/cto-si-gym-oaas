@@ -1,0 +1,4 @@
+{
+  "env": "oaas-v0",
+  "framework": "torch"
+}

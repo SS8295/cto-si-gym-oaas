@@ -1,0 +1,9 @@
+{
+  "create_env_on_driver": true,
+  "env": "stelios",
+  "evaluation_num_episodes": 1,
+  "evaluation_num_workers": 0,
+  "framework": "torch",
+  "record_env": null,
+  "render_env": true
+}
